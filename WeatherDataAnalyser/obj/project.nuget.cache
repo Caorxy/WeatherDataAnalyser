@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MH+iiIjB6SMZ41mGXHotSWYLrp+axsJzOvBY4wfDaYhv3Zj5Z5Jb0EDvkwLfodHdJaEATvVlYlq3fVyU8B5VRw==",
+  "dgSpecHash": "arcqMde4ozYJlZDSnW793zilOdL19ocF2v16zKPsPcQ+T7QEtyKkcZlPUKjJz2TJm5XyM5N4w87Cj5Egq+Ix9A==",
   "success": true,
   "projectFilePath": "C:\\Users\\gabri\\RiderProjects\\WeatherDataAnalyser\\WeatherDataAnalyser\\WeatherDataAnalyser.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gabri\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512"
+  ],
   "logs": []
 }

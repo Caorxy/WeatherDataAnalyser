@@ -12,13 +12,7 @@
     </UserControl.DataContext>
     <Grid>
         <Button
-            Style="{StaticResource BackButtonStyle}">
-            <Button.Resources>
-                <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="5"/>
-                </Style>
-            </Button.Resources>
-        </Button>
+            Style="{StaticResource BackButtonStyle}"/>
 
         <Border
             CornerRadius="10"

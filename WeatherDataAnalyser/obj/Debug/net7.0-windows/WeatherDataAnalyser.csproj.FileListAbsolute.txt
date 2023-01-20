@@ -27,3 +27,10 @@ C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\n
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\MVVM\View\AboutView.g.cs
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\MVVM\View\AboutView.baml
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\Theme\BackButtonTheme.baml
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\bin\Debug\net7.0-windows\Newtonsoft.Json.dll
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\MVVM\View\AnalysisView.g.cs
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\MVVM\View\AnalysisView.baml
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\WeatherDataAnalyser.csproj.CopyComplete
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\Theme\TextBoxTheme.baml
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\Theme\StandardTextTheme.baml
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\Theme\AddButtonTheme.baml

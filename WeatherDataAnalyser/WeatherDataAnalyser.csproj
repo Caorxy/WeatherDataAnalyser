@@ -8,12 +8,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="MVVM\Model" />
+      <None Remove="Images\analysing.png" />
+      <Resource Include="Images\analysing.png" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="Images\analysing.png" />
-      <Resource Include="Images\analysing.png" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     </ItemGroup>
 
 </Project>

@@ -13,9 +13,15 @@
             <DataTemplate DataType="{x:Type viewModel:AboutViewModel}">
                 <view:AboutView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:AnalysisViewModel}">
+                <view:AnalysisView/>
+            </DataTemplate>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/BackButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextBoxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/StandardTextTheme.xaml"/>
+                <ResourceDictionary Source="Theme/AddButtonTheme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
