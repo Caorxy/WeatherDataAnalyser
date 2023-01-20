@@ -3,9 +3,9 @@ using System.Windows.Controls;
 
 namespace WeatherDataAnalyser.MVVM.View;
 
-public partial class HomeView : UserControl
+public partial class AboutView : UserControl
 {
-    public HomeView()
+    public AboutView()
     {
         InitializeComponent();
         DataContext = Application.Current.MainWindow?.DataContext;

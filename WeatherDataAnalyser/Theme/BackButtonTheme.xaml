@@ -1,23 +1,28 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style TargetType="{x:Type Button}" x:Key="HomeButtonStyle">
+    <Style TargetType="{x:Type Button}" x:Key="BackButtonStyle">
+        <Setter Property="Width" Value="100" />
+        <Setter Property="Height" Value="40" />
         <Setter Property="Background" Value="Black" />
-        <Setter Property="Height" Value="100" />
-        <Setter Property="Width" Value="300" />
-        <Setter Property="Foreground" Value="White" />
-        <Setter Property="FontSize" Value="25" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Margin" Value="30,46,0,0" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Command" Value="{Binding HomeViewCommand}" />
+        <Setter Property="Content" Value="Back" />
+        <Setter Property="FontSize" Value="14" />
         <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="White" />
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="VerticalAlignment" Value="Center" />
-        <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border x:Name="Border" CornerRadius="15" Background="{TemplateBinding Background}">
+                    <Border x:Name="Border" Background="{TemplateBinding Background}">
                         <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Black" TargetName="Border" />
                             <Setter Property="Opacity" Value="1" TargetName="Border" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="False">

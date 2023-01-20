@@ -24,3 +24,6 @@ C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\n
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\MVVM\View\HomeView.g.cs
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\App.baml
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\MVVM\View\HomeView.baml
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\MVVM\View\AboutView.g.cs
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\MVVM\View\AboutView.baml
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\Theme\BackButtonTheme.baml
