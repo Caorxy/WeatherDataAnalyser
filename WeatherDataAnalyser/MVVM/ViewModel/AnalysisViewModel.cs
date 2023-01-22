@@ -10,6 +10,8 @@ public class AnalysisViewModel : ObservableObject
     public RelayCommand AddCommand { get; set; }
     public RelayCommand CalculateCommand { get; set; }
     public RelayCommand ChangeStats { get; set; }
+    public RelayCommand Next { get; set; }
+    public RelayCommand Back { get; set; }
     private GraphViewModel? _graphVm;
 
     public GraphViewModel? GraphVm
@@ -30,6 +32,7 @@ public class AnalysisViewModel : ObservableObject
     private string _lon2;
     private int _pos;
     private string _label;
+    private double _correlation;
     private DateTime _startDate;
     private DateTime _endDate;
     private StatisticsData? _statistics;
@@ -101,6 +104,16 @@ public class AnalysisViewModel : ObservableObject
         set
         {
             _label = value;
+            OnPropertyChanged();
+        }
+    }        
+    
+    public double Correlation
+    {
+        get => _correlation;
+        set
+        {
+            _correlation = value;
             OnPropertyChanged();
         }
     }    
@@ -189,6 +202,23 @@ public class AnalysisViewModel : ObservableObject
                 // invalid format
             }
         });
+        
+        
+        Next = new RelayCommand(_ =>
+        {
+            GraphVm.Pos = (GraphVm.Pos + 1) % 5;
+            GraphVm.Title = GraphVm.Titles[GraphVm.Pos];
+            GraphVm.OnGraphPropertyChanged();
+            SetStats(statisticsCalc);
+        });
+
+        Back = new RelayCommand(_ =>
+        {
+            GraphVm.Pos = GraphVm.Pos == 0 ? 4 : GraphVm.Pos - 1;
+            GraphVm.Title = GraphVm.Titles[GraphVm.Pos];
+            GraphVm.OnGraphPropertyChanged();
+            SetStats(statisticsCalc);
+        });
 
         ChangeStats = new RelayCommand(_ =>
         {
@@ -200,9 +230,17 @@ public class AnalysisViewModel : ObservableObject
 
     private void SetStats(IStatisticsCalc statisticsCalc)
     {
-        _statisticsArray[0] = statisticsCalc.GetStatistics((float[])GraphVm?.GetCurrentData(true)!, GraphVm?.CurrentGraphData?.HourlyWeatherInfo?.Time!);
-        if(GraphVm?.CurrentGraphData2 != null)
-            _statisticsArray[1] = statisticsCalc.GetStatistics((float[])GraphVm?.GetCurrentData(false)!, GraphVm?.CurrentGraphData2?.HourlyWeatherInfo?.Time!);
+        if (GraphVm?.CurrentGraphData != null)
+            _statisticsArray[0] = statisticsCalc.GetStatistics((float[])GraphVm?.GetCurrentData(true)!, GraphVm?.CurrentGraphData?.HourlyWeatherInfo?.Time!);
+        if (GraphVm?.CurrentGraphData2 != null)
+        {
+            _statisticsArray[1] = statisticsCalc.GetStatistics((float[])GraphVm?.GetCurrentData(false)!,
+                GraphVm?.CurrentGraphData2?.HourlyWeatherInfo?.Time!);
+
+            Correlation = statisticsCalc.CorrelationCoefficient((float[])GraphVm?.GetCurrentData(true)!,
+                (float[])GraphVm?.GetCurrentData(false)!);
+        }
+
         Statistics = _statisticsArray[_pos];
         Label = _labels[_pos];
     }

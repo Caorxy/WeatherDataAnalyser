@@ -18,6 +18,7 @@
       <PackageReference Include="LiveChartsCore.SkiaSharpView" Version="2.0.0-beta.700" />
       <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-beta.700" />
       <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+      <PackageReference Include="Microsoft.ML" Version="3.0.0-preview.22621.2" />
       <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     </ItemGroup>
 

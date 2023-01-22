@@ -26,6 +26,19 @@ public class StatisticsCalc : IStatisticsCalc
         return result;
     }
     
+    public double CorrelationCoefficient(float[] data1, float[] data2) {
+        if (data1.Length != data2.Length)
+            throw new ArgumentException("Arrays must be of the same length");
+
+        var mean1 = data1.Average();
+        var mean2 = data2.Average();
+        var std1 = StandardDeviation(data1);
+        var std2 = StandardDeviation(data2);
+        var result = data1.Select((x, i) => (x - mean1) * (data2[i] - mean2)).Sum() / (data1.Length * std1 * std2);
+
+        return Math.Round(result, 2);
+    }
+    
     private static double Median(IReadOnlyCollection<float> data)
     {
         var ordered = data.OrderBy(x => x)
@@ -71,7 +84,5 @@ public class StatisticsCalc : IStatisticsCalc
     private static int MinIndex(float[] array) {
         return array.AsSpan().IndexOf(array.Min());
     }
-
-
 
 }

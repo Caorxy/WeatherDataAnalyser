@@ -29,7 +29,6 @@ public class MainViewModel : ObservableObject
         IStatisticsCalc statisticsCalc = new StatisticsCalc();
         HomeVm = new HomeViewModel();
         AboutVm = new AboutViewModel();
-        AnalysisVm = new AnalysisViewModel(repository, statisticsCalc);
         CurrentView = HomeVm;
         
         HomeViewCommand = new RelayCommand(_ =>
@@ -44,6 +43,7 @@ public class MainViewModel : ObservableObject
         
         AnalysisViewCommand = new RelayCommand(_ =>
         {
+            AnalysisVm = new AnalysisViewModel(repository, statisticsCalc);
             CurrentView = AnalysisVm;
         });
     }

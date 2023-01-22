@@ -223,7 +223,20 @@
                             FontSize="12"
                             Content="Calculate"
                             Style="{StaticResource AddButtonStyle}"/>
-                
+                    
+                    <Grid Grid.Row="1" Grid.Column="0"
+                          Visibility="{Binding AnalysisVm.SecondLocationVisibility}">
+                    <TextBlock 
+                               Margin="20,0,0,0"
+                               Text="Correlation Coefficient"
+                               Style="{StaticResource TextStyle}"
+                    />
+                    <TextBlock 
+                               Margin="180,0,0,0"
+                               Text="{Binding AnalysisVm.Correlation}"
+                               Style="{StaticResource TextStyle}"
+                    />
+                    </Grid>
                     <ContentControl Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                                                 Content="{Binding AnalysisVm.GraphVm, Mode=TwoWay}"/>
                 

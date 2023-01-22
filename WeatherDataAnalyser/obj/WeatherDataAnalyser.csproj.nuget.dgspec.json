@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[5.2.9, )"
             },
+            "Microsoft.ML": {
+              "target": "Package",
+              "version": "[3.0.0-preview.22621.2, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"

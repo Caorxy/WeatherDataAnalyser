@@ -10,9 +10,11 @@
     <UserControl.DataContext>
         <viewModel:MainViewModel />
     </UserControl.DataContext>
-    <Grid>
+    <Grid
+        Background="Black"
+        Opacity="0.75"
+    >
         <Border
-            Opacity="0.7"
             Width="300"
             Height="350"
             CornerRadius="10">

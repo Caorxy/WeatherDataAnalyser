@@ -16,9 +16,9 @@ namespace WeatherDataAnalyser.MVVM.ViewModel;
 
 public class GraphViewModel : ObservableObject
 {
-    private readonly string[] _titles = { "Temperature", "Pressure", "Wind", "Humidity", "Rain" };
+    public readonly string[] Titles = { "Temperature", "Pressure", "Wind", "Humidity", "Rain" };
     private List<ISeries> _series;
-    private int _pos;
+    public int Pos;
     private string _title;
     private string _isNoteVisible;
     private bool _areLinesVisible;
@@ -26,7 +26,7 @@ public class GraphViewModel : ObservableObject
             
     public IEnumerable<float>? GetCurrentData(bool first)
     {
-        var pos = first ? _pos : _pos + 5;
+        var pos = first ? Pos : Pos + 5;
         return pos switch
         {
             0 => CurrentGraphData?.HourlyWeatherInfo?.Temperature!,
@@ -43,8 +43,6 @@ public class GraphViewModel : ObservableObject
         };
     }
 
-    public RelayCommand Next { get; set; }
-    public RelayCommand Back { get; set; }
     public RelayCommand LinesVisibilityChange { get; set; }
     public RelayCommand ColumnsVisibilityChange { get; set; }
 
@@ -138,27 +136,14 @@ public class GraphViewModel : ObservableObject
         columnSeries1.PointMeasured += OnPointMeasured;
         columnSeries2.PointMeasured += OnPointMeasured;
 
-        _pos = 0;
-        _title = _titles[_pos];
+        Pos = 0;
+        _title = Titles[Pos];
         _isNoteVisible = "Collapsed";
         _series = new List<ISeries> { columnSeries1 };
         _xaxes = Array.Empty<Axis>();
         _areLinesVisible = false;
         _areColumnsVisible = true;
 
-        Next = new RelayCommand(_ =>
-        {
-            _pos = (_pos + 1) % 5;
-            Title = _titles[_pos];
-            OnGraphPropertyChanged();
-        });
-
-        Back = new RelayCommand(_ =>
-        {
-            _pos = _pos == 0 ? 4 : _pos - 1;
-            Title = _titles[_pos];
-            OnGraphPropertyChanged();
-        });
         
         LinesVisibilityChange = new RelayCommand(_ =>
         {
@@ -190,7 +175,7 @@ public class GraphViewModel : ObservableObject
                     .WithEasingFunction(delayedFunction.Function));
     }
 
-    private void OnGraphPropertyChanged()
+    public void OnGraphPropertyChanged()
     {
         var values1 = new List<double>();
         var values2 = new List<double>();
