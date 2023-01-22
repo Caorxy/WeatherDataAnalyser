@@ -330,7 +330,7 @@
                                 Text="{Binding AnalysisVm.Statistics.StdDev}"/>
                             <TextBlock Grid.Row="5"
                                        Style="{StaticResource TextStyle}"
-                                       Text="Variance"/>
+                                       Text="Var"/>
                             <TextBlock Grid.Row="5"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"

@@ -19,6 +19,9 @@
             <DataTemplate DataType="{x:Type viewModel:GraphViewModel}">
                 <view:GraphView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:PredictionsViewModel}">
+                <view:PredictionsView/>
+            </DataTemplate>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/HomeButtonTheme.xaml"/>
                 <ResourceDictionary Source="Theme/BackButtonTheme.xaml"/>

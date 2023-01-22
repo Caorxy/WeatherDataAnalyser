@@ -144,8 +144,8 @@ public class AnalysisViewModel : ObservableObject
         {
             if (value > DateTime.Now) return;
             _endDate = value;
-            if (value > DateTime.Now.AddDays(-6))
-                _endDate = DateTime.Now.AddDays(-6);
+            if (value > DateTime.Now.AddDays(-7))
+                _endDate = DateTime.Now.AddDays(-7);
             OnPropertyChanged();
         }
     }
@@ -202,7 +202,6 @@ public class AnalysisViewModel : ObservableObject
                 // invalid format
             }
         });
-        
         
         Next = new RelayCommand(_ =>
         {

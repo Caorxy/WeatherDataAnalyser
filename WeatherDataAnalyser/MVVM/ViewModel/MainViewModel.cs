@@ -8,9 +8,11 @@ public class MainViewModel : ObservableObject
     public RelayCommand HomeViewCommand { get; set; }
     public RelayCommand AboutViewCommand { get; set; }
     public RelayCommand AnalysisViewCommand { get; set; }
+    public RelayCommand PredictionsViewCommand { get; set; }
     private HomeViewModel HomeVm { get; set; }
-    private AboutViewModel AboutVm { get; set; }
-    public AnalysisViewModel AnalysisVm { get; set; }
+    public AboutViewModel AboutVm { get; set; }
+    public PredictionsViewModel? PredictionsVm { get; set; }
+    public AnalysisViewModel? AnalysisVm { get; set; }
     private object? _currentView;
 
     public object? CurrentView
@@ -45,6 +47,13 @@ public class MainViewModel : ObservableObject
         {
             AnalysisVm = new AnalysisViewModel(repository, statisticsCalc);
             CurrentView = AnalysisVm;
+        });        
+        
+        PredictionsViewCommand = new RelayCommand(_ =>
+        {
+            PredictionsVm = new PredictionsViewModel(repository, statisticsCalc);
+            CurrentView = PredictionsVm;
         });
+        
     }
 }

@@ -17,13 +17,13 @@
         <Button
             Height="36" Width="20" VerticalAlignment="Top" Margin="150,23,0,0"
             Content=">" FontSize="18" FontWeight="SemiBold" Cursor="Hand"
-            Opacity="0.7" Command="{Binding AnalysisVm.Next}"
+            Opacity="0.7" Command="{Binding CurrentView.Next}"
             Background="Black" Foreground="White" BorderThickness="0"/>
         <Button
             Height="36" Width="20" VerticalAlignment="Top" Margin="0,23,150,0"
             FontSize="18" FontWeight="SemiBold"
             Opacity="0.7" Content="&lt;" Cursor="Hand"
-            Command="{Binding AnalysisVm.Back}"
+            Command="{Binding CurrentView.Back}"
             Background="Black" Foreground="White" BorderThickness="0"/>
         <Grid
             VerticalAlignment="Top"
@@ -37,7 +37,7 @@
                 Style="{StaticResource TextStyle}"/>
             <CheckBox
                 IsChecked="True"
-                Command="{Binding AnalysisVm.GraphVm.ColumnsVisibilityChange}"
+                Command="{Binding CurrentView.GraphVm.ColumnsVisibilityChange}"
                 Height="17"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"/>
@@ -53,27 +53,27 @@
                 Text="Lines"
                 Style="{StaticResource TextStyle}"/>
             <CheckBox
-                Command="{Binding AnalysisVm.GraphVm.LinesVisibilityChange}"
+                Command="{Binding CurrentView.GraphVm.LinesVisibilityChange}"
                 Height="17"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Right"/>
         </Grid>
         
-        <TextBlock Grid.Row="0"  Text="{Binding AnalysisVm.GraphVm.Title}" Foreground="White"
+        <TextBlock Grid.Row="0"  Text="{Binding CurrentView.GraphVm.Title}" Foreground="White"
                    VerticalAlignment="Top" Margin="0,30,0,0" 
                    HorizontalAlignment="Center"
                    FontSize="18"
                    FontWeight="SemiBold"/>
-        <wpf:CartesianChart Height="250"  Margin="0,60,0,0" VerticalAlignment="Top" Series="{Binding AnalysisVm.GraphVm.Series}"
+        <wpf:CartesianChart Height="250"  Margin="0,60,0,0" VerticalAlignment="Top" Series="{Binding CurrentView.GraphVm.Series}"
                             Foreground="White" FontSize="10"
-                            ZoomMode="X" XAxes="{Binding AnalysisVm.GraphVm.XAxes}"/>
+                            ZoomMode="X" XAxes="{Binding CurrentView.GraphVm.XAxes}"/>
         <TextBlock Grid.Row="0" Foreground="White"
                    VerticalAlignment="Bottom" Margin="0,0,0,30" 
                    Padding="10"
                    HorizontalAlignment="Center"
                    TextWrapping="Wrap"
                    Opacity="0.6"
-                   Visibility="{Binding AnalysisVm.GraphVm.IsNoteVisible}"
+                   Visibility="{Binding CurrentView.GraphVm.IsNoteVisible}"
                    TextAlignment="Center"
                    FontSize="8" Text="Note that for period longer than 1 month data showed on a graph are AVERAGES of cumulated hourly data. In order to see the data with an accuracy of an hour, please select the narrower time period you are interested in."
                    FontWeight="SemiBold"/>

@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "qHXekCPUF+fUMLVTPcbUqH8BNYbh+GnbnkjgRatZnQdyjK7AtAjybTMvHp76PyKyb5HYQCUcRC+YgUb8BgpIcg==",
+  "dgSpecHash": "7a/M43JoyVlzTd+9ZHkO5w/1zlghhhagzO5Z7FDAXcGWR9wEJK7/rbaobHgfzc3INzEKsflG3+WOGWO7TIbdjQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\gabri\\RiderProjects\\WeatherDataAnalyser\\WeatherDataAnalyser\\WeatherDataAnalyser.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\gabri\\.nuget\\packages\\accord\\3.8.2-alpha\\accord.3.8.2-alpha.nupkg.sha512",
+    "C:\\Users\\gabri\\.nuget\\packages\\accord.math\\3.8.2-alpha\\accord.math.3.8.2-alpha.nupkg.sha512",
+    "C:\\Users\\gabri\\.nuget\\packages\\accord.statistics\\3.8.2-alpha\\accord.statistics.3.8.2-alpha.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\harfbuzzsharp\\2.8.2.3\\harfbuzzsharp.2.8.2.3.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\harfbuzzsharp.nativeassets.macos\\2.8.2.3\\harfbuzzsharp.nativeassets.macos.2.8.2.3.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\harfbuzzsharp.nativeassets.win32\\2.8.2.3\\harfbuzzsharp.nativeassets.win32.2.8.2.3.nupkg.sha512",
@@ -12,6 +15,7 @@
     "C:\\Users\\gabri\\.nuget\\packages\\livechartscore\\2.0.0-beta.700\\livechartscore.2.0.0-beta.700.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\livechartscore.skiasharpview\\2.0.0-beta.700\\livechartscore.skiasharpview.2.0.0-beta.700.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\livechartscore.skiasharpview.wpf\\2.0.0-beta.700\\livechartscore.skiasharpview.wpf.2.0.0-beta.700.nupkg.sha512",
+    "C:\\Users\\gabri\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.9\\microsoft.aspnet.webapi.client.5.2.9.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.ml\\3.0.0-preview.22621.2\\microsoft.ml.3.0.0-preview.22621.2.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.ml.cpumath\\3.0.0-preview.22621.2\\microsoft.ml.cpumath.3.0.0-preview.22621.2.nupkg.sha512",

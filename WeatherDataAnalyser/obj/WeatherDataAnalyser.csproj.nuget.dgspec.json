@@ -38,6 +38,14 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
+            "Accord": {
+              "target": "Package",
+              "version": "[3.8.2-alpha, )"
+            },
+            "Accord.Statistics": {
+              "target": "Package",
+              "version": "[3.8.2-alpha, )"
+            },
             "LiveCharts.Wpf": {
               "target": "Package",
               "version": "[0.9.7, )"
@@ -53,6 +61,10 @@
             "LiveChartsCore.SkiaSharpView.WPF": {
               "target": "Package",
               "version": "[2.0.0-beta.700, )"
+            },
+            "MathNet.Numerics": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",

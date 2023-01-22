@@ -10,23 +10,28 @@
     <UserControl.DataContext>
         <viewModel:MainViewModel />
     </UserControl.DataContext>
-    <Grid>
+    <Grid
+        Background="Black"
+        Opacity="0.85">
         <Button
             Style="{StaticResource BackButtonStyle}"/>
 
         <Border
             CornerRadius="10"
             Width="400"
-            Height="400">
+            Height="400"
+            Background="DarkBlue">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="3.5*"/>
-                    <RowDefinition Height="3.5*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
                 <Border
                     CornerRadius="10,10,0,0"
-                    Background="Black">
+                    Background="Black"
+                    Opacity="0.85">
                     <TextBlock
                         Text="ABOUT"
                         FontSize="25"
@@ -39,22 +44,44 @@
                         Background="Black"
                         Opacity="0.7">
                     <TextBlock 
-                           FontSize="15"
+                           Style="{StaticResource TextStyle}"
                            Padding="15"
-                           Foreground="White"
-                           Text="Lorem ipsum"/>
+                           VerticalAlignment="Top"
+                           TextWrapping="Wrap"
+                           Text="A simple application that allows you to check weather statistics from the last 30 years for any location in the world."/>
                 </Border>
                 <Border Grid.Row="2"
+                        Background="Black"
+                        Opacity="0.7">
+                    <TextBlock 
+                        Style="{StaticResource TextStyle}"
+                        FontSize="15"
+                        VerticalAlignment="Top"
+                        Padding="15"
+                        TextWrapping="Wrap"
+                        Text="ANALYSIS allows you to check statistical data for a given location and compare it with another location."/>
+                </Border>
+                <Border Grid.Row="3"
                         CornerRadius="0,0,10,10"
                         Background="Black"
                         Opacity="0.7">
                     <TextBlock 
-                           FontSize="15"
-                           Padding="15"
-                           Foreground="White"
-                           Text="Lorem ipsum"/>
+                        Style="{StaticResource TextStyle}"
+                        FontSize="15"
+                        VerticalAlignment="Top"
+                        Padding="15"
+                        TextWrapping="Wrap"
+                        Text="PREDICTIONS allow you to check the forecasted values for a given location based on the ARIMA model"/>
                 </Border>
             </Grid>
         </Border>
+        <TextBlock 
+            Foreground="White"
+            FontSize="10"
+            Margin="0,0,0,10"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Center">
+            Created by <Hyperlink Foreground="White" NavigateUri="https://github.com/Caorxy" Command="{Binding AboutVm.HyperlinkCommand}" CommandParameter="https://github.com/Caorxy">Caorxy</Hyperlink>
+        </TextBlock>
     </Grid>
 </UserControl>

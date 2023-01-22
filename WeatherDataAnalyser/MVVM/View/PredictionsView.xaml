@@ -1,0 +1,206 @@
+﻿<UserControl x:Class="WeatherDataAnalyser.MVVM.View.PredictionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:WeatherDataAnalyser.MVVM.View"
+             xmlns:viewModel="clr-namespace:WeatherDataAnalyser.MVVM.ViewModel"
+             mc:Ignorable="d"
+             d:DesignHeight="525" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <viewModel:MainViewModel />
+    </UserControl.DataContext>
+    <Grid>
+        <Border
+            Background="Black"
+            Opacity="0.85">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.3*"/>
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid Grid.Row="0" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        
+                        <Button Grid.Row="0" Grid.Column="0"
+                            Style="{StaticResource BackButtonStyle}"/>
+                        
+                        <Grid Grid.Row="0" Grid.Column="1"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Top"
+                                    Margin="0,15,0,0"
+                                    Width="150">
+                            <TextBlock
+                                Style="{StaticResource TextStyle}"
+                                Text="Lat:"/>
+                            <TextBox
+                                    Text="{Binding PredictionsVm.Lat, Mode=OneWayToSource}"
+                                     Name="LatTyped"
+                                     Style="{StaticResource TextBoxStyle}">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </Grid>
+                        <Grid Grid.Row="0" Grid.Column="1"
+                              HorizontalAlignment="Center"
+                              VerticalAlignment="Bottom"
+                              Margin="0,0,0,15"
+                              Width="150">
+                            <TextBlock
+                                Style="{StaticResource TextStyle}"
+                                Text="Lon:"/>
+                            <TextBox 
+                                Text="{Binding PredictionsVm.Lon, Mode=OneWayToSource}"
+                                Name="LonTyped"
+                                Style="{StaticResource TextBoxStyle}">
+                                <TextBox.Resources>
+                                    <Style TargetType="Border">
+                                        <Setter Property="CornerRadius" Value="5"/>
+                                    </Style>
+                                </TextBox.Resources>
+                            </TextBox>
+                        </Grid>
+                    </Grid>
+                    
+                    <Button Grid.Row="0" Grid.Column="1"
+                            Command="{Binding PredictionsVm.CalculateCommand}"
+                            HorizontalAlignment="Center"
+                            Background="DarkRed"
+                            Width="70"
+                            Foreground="White"
+                            FontSize="12"
+                            Content="Forecast"
+                            Style="{StaticResource AddButtonStyle}"/>
+                    
+                    <ContentControl Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                                Content="{Binding PredictionsVm.GraphVm, Mode=TwoWay}"/>
+                
+                    <Grid Grid.Row="2" Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="6*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                    VerticalAlignment="Top"
+                                    HorizontalAlignment="Center"
+                                    FontSize="20"
+                                    Style="{StaticResource TextStyle}"
+                                    Text="Statistics"/>
+                        
+                        <Grid Grid.Row="1" Grid.Column="0" Margin="0,0,5,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock Grid.Row="0"
+                                       Style="{StaticResource TextStyle}"
+                                       Text="Max"/>
+                            <TextBlock Grid.Row="0"
+                                Style="{StaticResource TextStyle}"
+                                HorizontalAlignment="Right"
+                                Text="{Binding PredictionsVm.Statistics.Max}"/>
+                            <TextBlock Grid.Row="1"
+                                       Style="{StaticResource TextStyle}"
+                                       Text="Min"/>
+                            <TextBlock Grid.Row="1"
+                                Style="{StaticResource TextStyle}"
+                                HorizontalAlignment="Right"
+                                Text="{Binding PredictionsVm.Statistics.Min}"/>
+                            <TextBlock Grid.Row="2"
+                                       Style="{StaticResource TextStyle}"
+                                       Text="Avg"/>
+                            <TextBlock Grid.Row="2"
+                                Style="{StaticResource TextStyle}"
+                                HorizontalAlignment="Right"
+                                Text="{Binding PredictionsVm.Statistics.Avg}"/>
+                            <TextBlock Grid.Row="3"
+                                       Style="{StaticResource TextStyle}"
+                                       Text="Median"/>
+                            <TextBlock Grid.Row="3"
+                                Style="{StaticResource TextStyle}"
+                                HorizontalAlignment="Right"
+                                Text="{Binding PredictionsVm.Statistics.Median}"/>
+                            <TextBlock Grid.Row="4"
+                                       Style="{StaticResource TextStyle}"
+                                       Text="StdDev"/>
+                            <TextBlock Grid.Row="4"
+                                Style="{StaticResource TextStyle}"
+                                HorizontalAlignment="Right"
+                                Text="{Binding PredictionsVm.Statistics.StdDev}"/>
+                            <TextBlock Grid.Row="5"
+                                       Style="{StaticResource TextStyle}"
+                                       Text="Var"/>
+                            <TextBlock Grid.Row="5"
+                                Style="{StaticResource TextStyle}"
+                                HorizontalAlignment="Right"
+                                Text="{Binding PredictionsVm.Statistics.Variance}"/>
+                            <TextBlock Grid.Row="6"
+                                       Style="{StaticResource TextStyle}"
+                                       Text="Mode"/>
+                            <TextBlock Grid.Row="6"
+                                Style="{StaticResource TextStyle}"
+                                HorizontalAlignment="Right"
+                                Text="{Binding PredictionsVm.Statistics.Dominant}"/>
+                            <TextBlock Grid.Row="7"
+                                       Style="{StaticResource TextStyle}"
+                                       Text="AFac"/>
+                            <TextBlock Grid.Row="7"
+                                Style="{StaticResource TextStyle}"
+                                HorizontalAlignment="Right"
+                                Text="{Binding PredictionsVm.Statistics.AsymmetryFactor}"/>
+                            
+                        </Grid>
+                        <Grid Grid.Row="1" Grid.Column="1" Margin="0,0,5,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock Grid.Row="0"
+                                       Style="{StaticResource TextStyle}"
+                                       HorizontalAlignment="Center"
+                                       Text="{Binding PredictionsVm.Statistics.MaxDate}"/>
+                            <TextBlock Grid.Row="1"
+                                       Style="{StaticResource TextStyle}"
+                                       HorizontalAlignment="Center"
+                                       Text="{Binding PredictionsVm.Statistics.MinDate}"/>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+    </Grid>
+</UserControl>
