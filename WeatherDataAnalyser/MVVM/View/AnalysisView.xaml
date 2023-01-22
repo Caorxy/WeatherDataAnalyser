@@ -224,7 +224,9 @@
                             Content="Calculate"
                             Style="{StaticResource AddButtonStyle}"/>
                 
-                    <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"></Grid>
+                    <ContentControl Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                                Content="{Binding AnalysisVm.GraphVm, Mode=TwoWay}"/>
+                
                     <Grid Grid.Row="2" Grid.Column="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
@@ -238,19 +240,21 @@
                                 Visibility="{Binding AnalysisVm.SecondLocationVisibility}"
                                 Height="36" Width="20" VerticalAlignment="Bottom"
                                 Margin="0,0,20,0"
+                                Command="{Binding AnalysisVm.ChangeStats}"
                                 HorizontalAlignment="Right"
-                                Content="&gt" FontSize="18" FontWeight="Bold" Cursor="Hand"
+                                Content="&gt;" FontSize="18" FontWeight="Bold" Cursor="Hand"
                                 Opacity="0.7"
                                 Background="Black" Foreground="White" BorderThickness="0"/>
                         <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                                    Visibility="{Binding AnalysisVm.SecondLocationVisibility}"
-                                   Text="First Location"
+                                   Text="{Binding AnalysisVm.Label}"
                                    Margin="0,17,0,0"
                                    HorizontalAlignment="Center"
                                    Style="{StaticResource TextStyle}"/>
                         <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                                 Visibility="{Binding AnalysisVm.SecondLocationVisibility}"
                                 Height="36" Width="20" VerticalAlignment="Bottom"
+                                Command="{Binding AnalysisVm.ChangeStats}"
                                 Margin="20,0,0,0"
                                 HorizontalAlignment="Left"
                                 FontSize="18" FontWeight="Bold"
@@ -282,56 +286,56 @@
                             <TextBlock Grid.Row="0"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
-                                Text="21.37"/>
+                                Text="{Binding AnalysisVm.Statistics.Max}"/>
                             <TextBlock Grid.Row="1"
                                        Style="{StaticResource TextStyle}"
                                        Text="Min"/>
                             <TextBlock Grid.Row="1"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
-                                Text="21.37"/>
+                                Text="{Binding AnalysisVm.Statistics.Min}"/>
                             <TextBlock Grid.Row="2"
                                        Style="{StaticResource TextStyle}"
                                        Text="Avg"/>
                             <TextBlock Grid.Row="2"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
-                                Text="21.37"/>
+                                Text="{Binding AnalysisVm.Statistics.Avg}"/>
                             <TextBlock Grid.Row="3"
                                        Style="{StaticResource TextStyle}"
                                        Text="Median"/>
                             <TextBlock Grid.Row="3"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
-                                Text="21.37"/>
+                                Text="{Binding AnalysisVm.Statistics.Median}"/>
                             <TextBlock Grid.Row="4"
                                        Style="{StaticResource TextStyle}"
                                        Text="StdDev"/>
                             <TextBlock Grid.Row="4"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
-                                Text="21.37"/>
+                                Text="{Binding AnalysisVm.Statistics.StdDev}"/>
                             <TextBlock Grid.Row="5"
                                        Style="{StaticResource TextStyle}"
                                        Text="Variance"/>
                             <TextBlock Grid.Row="5"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
-                                Text="21.37"/>
+                                Text="{Binding AnalysisVm.Statistics.Variance}"/>
                             <TextBlock Grid.Row="6"
                                        Style="{StaticResource TextStyle}"
-                                       Text="Dom"/>
+                                       Text="Mode"/>
                             <TextBlock Grid.Row="6"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
-                                Text="21.37"/>
+                                Text="{Binding AnalysisVm.Statistics.Dominant}"/>
                             <TextBlock Grid.Row="7"
                                        Style="{StaticResource TextStyle}"
-                                       Text="Exp"/>
+                                       Text="AFac"/>
                             <TextBlock Grid.Row="7"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
-                                Text="21.37"/>
+                                Text="{Binding AnalysisVm.Statistics.AsymmetryFactor}"/>
                             
                         </Grid>
                         <Grid Grid.Row="1" Grid.Column="1" Margin="0,0,5,0">
@@ -350,11 +354,11 @@
                             <TextBlock Grid.Row="0"
                                        Style="{StaticResource TextStyle}"
                                        HorizontalAlignment="Center"
-                                       Text="21.21.2021"/>
+                                       Text="{Binding AnalysisVm.Statistics.MaxDate}"/>
                             <TextBlock Grid.Row="1"
                                        Style="{StaticResource TextStyle}"
                                        HorizontalAlignment="Center"
-                                       Text="21.21.2021"/>
+                                       Text="{Binding AnalysisVm.Statistics.MinDate}"/>
                         </Grid>
                     </Grid>
                 </Grid>

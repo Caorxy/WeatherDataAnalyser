@@ -38,6 +38,26 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
+            "LiveCharts.Wpf": {
+              "target": "Package",
+              "version": "[0.9.7, )"
+            },
+            "LiveChartsCore": {
+              "target": "Package",
+              "version": "[2.0.0-beta.700, )"
+            },
+            "LiveChartsCore.SkiaSharpView": {
+              "target": "Package",
+              "version": "[2.0.0-beta.700, )"
+            },
+            "LiveChartsCore.SkiaSharpView.WPF": {
+              "target": "Package",
+              "version": "[2.0.0-beta.700, )"
+            },
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.9, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.2, )"

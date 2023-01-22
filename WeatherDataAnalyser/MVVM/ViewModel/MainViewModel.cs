@@ -1,4 +1,5 @@
 ﻿using WeatherDataAnalyser.Core;
+using WeatherDataAnalyser.MVVM.Model;
 
 namespace WeatherDataAnalyser.MVVM.ViewModel;
 
@@ -24,9 +25,11 @@ public class MainViewModel : ObservableObject
 
     public MainViewModel()
     {
+        IRepository repository = new Repository();
+        IStatisticsCalc statisticsCalc = new StatisticsCalc();
         HomeVm = new HomeViewModel();
         AboutVm = new AboutViewModel();
-        AnalysisVm = new AnalysisViewModel();
+        AnalysisVm = new AnalysisViewModel(repository, statisticsCalc);
         CurrentView = HomeVm;
         
         HomeViewCommand = new RelayCommand(_ =>
