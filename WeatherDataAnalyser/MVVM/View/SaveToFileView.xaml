@@ -197,7 +197,7 @@
                         Width="52">
                         <TextBlock
                             TextAlignment="Left"
-                            Text="Date"
+                            Text="Time"
                             Style="{StaticResource TextStyle}"/>
                         <CheckBox
                             IsChecked="True"

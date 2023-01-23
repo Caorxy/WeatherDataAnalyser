@@ -12,6 +12,11 @@ public class Repository : IRepository
     public Repository()
     {
         _client = new HttpClient();
+    }    
+    
+    public Repository(HttpClient client)
+    {
+        _client = client;
     }
 
     public async Task<HistoricalData?> GetHistoricalData(GeoCoordinates coordinates, DateTime startDate, DateTime endDate)
