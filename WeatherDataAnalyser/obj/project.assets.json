@@ -378,6 +378,77 @@
           }
         }
       },
+      "Microsoft.ML.Mkl.Redist/3.0.0-preview.22621.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libMklImports.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/linux-x64/native/libMklProxyNative.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/libMklImports.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/osx-x64/native/libMklProxyNative.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/MklImports.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/MklProxyNative.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libiomp5md.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/MklImports.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/MklProxyNative.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libiomp5md.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "Microsoft.ML.TimeSeries/3.0.0-preview.22621.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.ML": "3.0.0-preview.22621.2",
+          "Microsoft.ML.Mkl.Redist": "3.0.0-preview.22621.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.ML.TimeSeries.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.TimeSeries.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/2.0.0": {
         "type": "package",
         "compile": {
@@ -2356,6 +2427,47 @@
         "lib/netstandard2.0/Microsoft.ML.DataView.xml",
         "microsoft.ml.dataview.3.0.0-preview.22621.2.nupkg.sha512",
         "microsoft.ml.dataview.nuspec",
+        "mlnetlogo.png"
+      ]
+    },
+    "Microsoft.ML.Mkl.Redist/3.0.0-preview.22621.2": {
+      "sha512": "KItikPiaK0Du44a3+6RkPD16V+/bTIJFyBmaVjroLyq/AGnSTpXS1eE5vXZDD7+Ga4lu1j8YTlu6eXsGO5CVWw==",
+      "type": "package",
+      "path": "microsoft.ml.mkl.redist/3.0.0-preview.22621.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "build/netstandard2.0/Microsoft.ML.Mkl.Redist.props",
+        "lib/netstandard2.0/_._",
+        "microsoft.ml.mkl.redist.3.0.0-preview.22621.2.nupkg.sha512",
+        "microsoft.ml.mkl.redist.nuspec",
+        "mlnetlogo.png",
+        "runtimes/linux-x64/native/libMklImports.so",
+        "runtimes/linux-x64/native/libMklProxyNative.so",
+        "runtimes/osx-x64/native/libMklImports.dylib",
+        "runtimes/osx-x64/native/libMklProxyNative.dylib",
+        "runtimes/win-x64/native/MklImports.dll",
+        "runtimes/win-x64/native/MklProxyNative.dll",
+        "runtimes/win-x64/native/libiomp5md.dll",
+        "runtimes/win-x86/native/MklImports.dll",
+        "runtimes/win-x86/native/MklProxyNative.dll",
+        "runtimes/win-x86/native/libiomp5md.dll"
+      ]
+    },
+    "Microsoft.ML.TimeSeries/3.0.0-preview.22621.2": {
+      "sha512": "TODcFIo51i6DCYk3wHZOAdJbGE/TBWqtXO0XKwq4jyZaVhFKVKPR4Ys5jGjdDLU7t3Ym8n/Kdq+ow9GTMu0tmw==",
+      "type": "package",
+      "path": "microsoft.ml.timeseries/3.0.0-preview.22621.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard2.0/Microsoft.ML.TimeSeries.dll",
+        "lib/netstandard2.0/Microsoft.ML.TimeSeries.xml",
+        "microsoft.ml.timeseries.3.0.0-preview.22621.2.nupkg.sha512",
+        "microsoft.ml.timeseries.nuspec",
         "mlnetlogo.png"
       ]
     },
@@ -6026,6 +6138,7 @@
       "MathNet.Numerics >= 5.0.0",
       "Microsoft.AspNet.WebApi.Client >= 5.2.9",
       "Microsoft.ML >= 3.0.0-preview.22621.2",
+      "Microsoft.ML.TimeSeries >= 3.0.0-preview.22621.2",
       "Newtonsoft.Json >= 13.0.2"
     ]
   },
@@ -6099,6 +6212,10 @@
             "version": "[5.2.9, )"
           },
           "Microsoft.ML": {
+            "target": "Package",
+            "version": "[3.0.0-preview.22621.2, )"
+          },
+          "Microsoft.ML.TimeSeries": {
             "target": "Package",
             "version": "[3.0.0-preview.22621.2, )"
           },

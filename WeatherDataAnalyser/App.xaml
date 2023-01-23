@@ -19,7 +19,7 @@
             <DataTemplate DataType="{x:Type viewModel:GraphViewModel}">
                 <view:GraphView/>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModel:PredictionsViewModel}">
+            <DataTemplate DataType="{x:Type viewModel:SaveToFileViewModel}">
                 <view:PredictionsView/>
             </DataTemplate>
             <ResourceDictionary.MergedDictionaries>

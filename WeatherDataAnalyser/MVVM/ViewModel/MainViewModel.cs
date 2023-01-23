@@ -11,7 +11,7 @@ public class MainViewModel : ObservableObject
     public RelayCommand PredictionsViewCommand { get; set; }
     private HomeViewModel HomeVm { get; set; }
     public AboutViewModel AboutVm { get; set; }
-    public PredictionsViewModel? PredictionsVm { get; set; }
+    public SaveToFileViewModel? SaveToFileVm { get; set; }
     public AnalysisViewModel? AnalysisVm { get; set; }
     private object? _currentView;
 
@@ -29,6 +29,7 @@ public class MainViewModel : ObservableObject
     {
         IRepository repository = new Repository();
         IStatisticsCalc statisticsCalc = new StatisticsCalc();
+        IDataManager dataManager = new DataManager();
         HomeVm = new HomeViewModel();
         AboutVm = new AboutViewModel();
         CurrentView = HomeVm;
@@ -51,8 +52,8 @@ public class MainViewModel : ObservableObject
         
         PredictionsViewCommand = new RelayCommand(_ =>
         {
-            PredictionsVm = new PredictionsViewModel(repository, statisticsCalc);
-            CurrentView = PredictionsVm;
+            SaveToFileVm = new SaveToFileViewModel(repository, dataManager);
+            CurrentView = SaveToFileVm;
         });
         
     }

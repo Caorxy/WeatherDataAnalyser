@@ -17,6 +17,7 @@
           "MathNet.Numerics": "5.0.0",
           "Microsoft.AspNet.WebApi.Client": "5.2.9",
           "Microsoft.ML": "3.0.0-preview.22621.2",
+          "Microsoft.ML.TimeSeries": "3.0.0-preview.22621.2",
           "Newtonsoft.Json": "13.0.2"
         },
         "runtime": {
@@ -264,6 +265,72 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.ML.DataView.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "3.0.22.62102"
+          }
+        }
+      },
+      "Microsoft.ML.Mkl.Redist/3.0.0-preview.22621.2": {
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libMklImports.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libMklProxyNative.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libMklImports.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libMklProxyNative.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/MklImports.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "2021.3.1.0"
+          },
+          "runtimes/win-x64/native/MklProxyNative.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.2100.22.62102"
+          },
+          "runtimes/win-x64/native/libiomp5md.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "5.0.2018.913"
+          },
+          "runtimes/win-x86/native/MklImports.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "2021.3.1.0"
+          },
+          "runtimes/win-x86/native/MklProxyNative.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.2100.22.62102"
+          },
+          "runtimes/win-x86/native/libiomp5md.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "5.0.2018.913"
+          }
+        }
+      },
+      "Microsoft.ML.TimeSeries/3.0.0-preview.22621.2": {
+        "dependencies": {
+          "Microsoft.ML": "3.0.0-preview.22621.2",
+          "Microsoft.ML.Mkl.Redist": "3.0.0-preview.22621.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.ML.TimeSeries.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "3.0.22.62102"
           }
@@ -1165,6 +1232,20 @@
       "sha512": "sha512-98TUPmKu3DUxURVeEZL9M9gkVsNraYlcvJANRZxT0nYf3I5a0fyQeNhB9bx23Rg6VjTYIVbuH/f89RT4skkRoQ==",
       "path": "microsoft.ml.dataview/3.0.0-preview.22621.2",
       "hashPath": "microsoft.ml.dataview.3.0.0-preview.22621.2.nupkg.sha512"
+    },
+    "Microsoft.ML.Mkl.Redist/3.0.0-preview.22621.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KItikPiaK0Du44a3+6RkPD16V+/bTIJFyBmaVjroLyq/AGnSTpXS1eE5vXZDD7+Ga4lu1j8YTlu6eXsGO5CVWw==",
+      "path": "microsoft.ml.mkl.redist/3.0.0-preview.22621.2",
+      "hashPath": "microsoft.ml.mkl.redist.3.0.0-preview.22621.2.nupkg.sha512"
+    },
+    "Microsoft.ML.TimeSeries/3.0.0-preview.22621.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TODcFIo51i6DCYk3wHZOAdJbGE/TBWqtXO0XKwq4jyZaVhFKVKPR4Ys5jGjdDLU7t3Ym8n/Kdq+ow9GTMu0tmw==",
+      "path": "microsoft.ml.timeseries/3.0.0-preview.22621.2",
+      "hashPath": "microsoft.ml.timeseries.3.0.0-preview.22621.2.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
       "type": "package",

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7a/M43JoyVlzTd+9ZHkO5w/1zlghhhagzO5Z7FDAXcGWR9wEJK7/rbaobHgfzc3INzEKsflG3+WOGWO7TIbdjQ==",
+  "dgSpecHash": "+HbQgyMLg3WdL8EOI/go8mSUpeRRW67RcF8OyGkNp5lWmoHE9yxza+q8ROprWJgLp1dLqHNUDZrJTUvNUgAHSQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\gabri\\RiderProjects\\WeatherDataAnalyser\\WeatherDataAnalyser\\WeatherDataAnalyser.csproj",
   "expectedPackageFiles": [
@@ -20,6 +20,8 @@
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.ml\\3.0.0-preview.22621.2\\microsoft.ml.3.0.0-preview.22621.2.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.ml.cpumath\\3.0.0-preview.22621.2\\microsoft.ml.cpumath.3.0.0-preview.22621.2.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.ml.dataview\\3.0.0-preview.22621.2\\microsoft.ml.dataview.3.0.0-preview.22621.2.nupkg.sha512",
+    "C:\\Users\\gabri\\.nuget\\packages\\microsoft.ml.mkl.redist\\3.0.0-preview.22621.2\\microsoft.ml.mkl.redist.3.0.0-preview.22621.2.nupkg.sha512",
+    "C:\\Users\\gabri\\.nuget\\packages\\microsoft.ml.timeseries\\3.0.0-preview.22621.2\\microsoft.ml.timeseries.3.0.0-preview.22621.2.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\gabri\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",

@@ -71,7 +71,7 @@
                         VerticalAlignment="Top"
                         Padding="15"
                         TextWrapping="Wrap"
-                        Text="PREDICTIONS allow you to check the forecasted values for a given location based on the ARIMA model"/>
+                        Text="SAVE TO FILE allows you to save filtered and sorted data to external txt file in JSON format."/>
                 </Border>
             </Grid>
         </Border>
