@@ -7,7 +7,7 @@ namespace WeatherDataAnalyser.MVVM.Model;
 
 public class DataManager : IDataManager
 {
-    private struct DataRow
+    public struct DataRow
     {
         public DateTime Time { get; set; }
         public float Temperature { get; set; }
@@ -68,7 +68,8 @@ public class DataManager : IDataManager
         for (var i = 0; i < dataRows.Count; i++)
         {
             jsonString.Append('{');
-            jsonString.Append("\"Time\":\"" + dataRows[i].Time + "\",");
+            if (valuesIncluded[0])
+                jsonString.Append("\"Time\":\"" + dataRows[i].Time + "\",");
             if (valuesIncluded[1])
                 jsonString.Append("\"Temperature\":" + dataRows[i].Temperature + ",");
             if (valuesIncluded[2])

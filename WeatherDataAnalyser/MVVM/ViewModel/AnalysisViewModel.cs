@@ -5,7 +5,7 @@ using WeatherDataAnalyser.MVVM.Model;
 
 namespace WeatherDataAnalyser.MVVM.ViewModel;
 
-public class AnalysisViewModel : ObservableObject
+public class AnalysisViewModel : AbstractViewModel
 {
     public RelayCommand AddCommand { get; set; }
     public RelayCommand CalculateCommand { get; set; }
@@ -26,15 +26,11 @@ public class AnalysisViewModel : ObservableObject
 
     private string _addButtonVisibility;
     private string _secondLocationVisibility;
-    private string _lat;
-    private string _lon;    
     private string _lat2;
     private string _lon2;
     private int _pos;
     private string _label;
     private double _correlation;
-    private DateTime _startDate;
-    private DateTime _endDate;
     private StatisticsData? _statistics;
     private StatisticsData[] _statisticsArray;
     private string[] _labels = {"First Location", "Second Location"};
@@ -59,15 +55,6 @@ public class AnalysisViewModel : ObservableObject
         }
     }    
     
-    public string Lat
-    {
-        get => _lat;
-        set
-        {
-            _lat = value;
-            OnPropertyChanged();
-        }
-    }    
     
     public string Lat2
     {
@@ -78,16 +65,6 @@ public class AnalysisViewModel : ObservableObject
             OnPropertyChanged();
         }
     }
-    
-    public string Lon
-    {
-        get => _lon;
-        set
-        {
-            _lon = value;
-            OnPropertyChanged();
-        }
-    }    
     
     public string Lon2
     {
@@ -127,36 +104,11 @@ public class AnalysisViewModel : ObservableObject
         }
     }
 
-    public DateTime StartDate 
-    {
-        get => _startDate;
-        set
-        {
-            if (value < new DateTime(1993, 01, 01)) return;
-            _startDate = value;
-            OnPropertyChanged();
-        }
-    }
-    public DateTime EndDate 
-    {
-        get => _endDate;
-        set
-        {
-            if (value > DateTime.Now) return;
-            _endDate = value;
-            if (value > DateTime.Now.AddDays(-7))
-                _endDate = DateTime.Now.AddDays(-7);
-            OnPropertyChanged();
-        }
-    }
-
     public AnalysisViewModel(IRepository repository, IStatisticsCalc statisticsCalc)
     {
         _addButtonVisibility = "Visible";
         _secondLocationVisibility = "Collapsed";
-        _lat = "";
         _lat2 = ""; 
-        _lon = "";
         _lon2 = "";
         _pos = 0;
         _label = "";
@@ -230,11 +182,11 @@ public class AnalysisViewModel : ObservableObject
     private void SetStats(IStatisticsCalc statisticsCalc)
     {
         if (GraphVm?.CurrentGraphData != null)
-            _statisticsArray[0] = statisticsCalc.GetStatistics((float[])GraphVm?.GetCurrentData(true)!, GraphVm?.CurrentGraphData?.HourlyWeatherInfo?.Time!);
+            _statisticsArray[0] = statisticsCalc.GetStatistics((float[])GraphVm?.GetCurrentData(true)!, GraphVm?.CurrentGraphData?.HourlyWeatherInfo.Time!);
         if (GraphVm?.CurrentGraphData2 != null)
         {
             _statisticsArray[1] = statisticsCalc.GetStatistics((float[])GraphVm?.GetCurrentData(false)!,
-                GraphVm?.CurrentGraphData2?.HourlyWeatherInfo?.Time!);
+                GraphVm?.CurrentGraphData2?.HourlyWeatherInfo.Time!);
 
             Correlation = statisticsCalc.CorrelationCoefficient((float[])GraphVm?.GetCurrentData(true)!,
                 (float[])GraphVm?.GetCurrentData(false)!);

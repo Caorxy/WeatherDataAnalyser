@@ -5,10 +5,9 @@ using WeatherDataAnalyser.MVVM.Model;
 
 namespace WeatherDataAnalyser.MVVM.ViewModel;
 
-public class SaveToFileViewModel : ObservableObject
+public class SaveToFileViewModel : AbstractViewModel
 {
-    private string _lat;
-    private string _lon;
+
     private string _sortBy;
     private string _opacity1;
     private string _opacity2;
@@ -20,8 +19,7 @@ public class SaveToFileViewModel : ObservableObject
     private bool _humidityIncluded;
     private bool _isAscending;
     private string _successNoteVisibility;
-    private DateTime _startDate;
-    private DateTime _endDate;
+
     public RelayCommand DateIncludedChanged { get; set; }
     public RelayCommand TemperatureIncludedChanged { get; set; }
     public RelayCommand PressureIncludedChanged { get; set; }
@@ -30,24 +28,7 @@ public class SaveToFileViewModel : ObservableObject
     public RelayCommand HumidityIncludedChanged { get; set; }
     public RelayCommand IsAscendingChanged { get; set; }
     public RelayCommand SaveDataToFile { get; set; }
-    public string Lat
-    {
-        get => _lat;
-        set
-        {
-            _lat = value;
-            OnPropertyChanged();
-        }
-    }  
-    public string Lon
-    {
-        get => _lon;
-        set
-        {
-            _lon = value;
-            OnPropertyChanged();
-        }
-    }
+    
     public string Opacity1
     {
         get => _opacity1;
@@ -74,29 +55,8 @@ public class SaveToFileViewModel : ObservableObject
             _successNoteVisibility = value;
             OnPropertyChanged();
         }
-    }    
-    public DateTime StartDate 
-    {
-        get => _startDate;
-        set
-        {
-            if (value < new DateTime(1993, 01, 01)) return;
-            _startDate = value;
-            OnPropertyChanged();
-        }
     }
-    public DateTime EndDate 
-    {
-        get => _endDate;
-        set
-        {
-            if (value > DateTime.Now) return;
-            _endDate = value;
-            if (value > DateTime.Now.AddDays(-7))
-                _endDate = DateTime.Now.AddDays(-7);
-            OnPropertyChanged();
-        }
-    }
+    
     public string SortBy 
     {
         get => _sortBy;
@@ -109,8 +69,8 @@ public class SaveToFileViewModel : ObservableObject
 
     public SaveToFileViewModel(IRepository repository, IDataManager dataManager)
     {
-        _lat = "";
-        _lon = "";
+        Lat = "";
+        Lon = "";
         _opacity1 = "0.5";
         _opacity2 = "1";
         _sortBy = "Time";
