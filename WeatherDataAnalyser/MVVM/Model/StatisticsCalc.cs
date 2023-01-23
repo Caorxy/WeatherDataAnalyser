@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 
 namespace WeatherDataAnalyser.MVVM.Model;
@@ -39,7 +38,7 @@ public class StatisticsCalc : IStatisticsCalc
         return Math.Round(result, 2);
     }
     
-    private static double Median(IReadOnlyCollection<float> data)
+    public double Median(IReadOnlyCollection<float> data)
     {
         var ordered = data.OrderBy(x => x)
             .ToArray();
@@ -50,17 +49,17 @@ public class StatisticsCalc : IStatisticsCalc
         return ordered.ElementAt(mid);
     }
     
-    private static double StandardDeviation(float[] array) {
+    public double StandardDeviation(float[] array) {
         return Math.Sqrt(Variance(array));
     }    
     
-    private static double Variance(float[] array) {
+    public double Variance(float[] array) {
         double mean = array.Average();
         return array.Select(x => (x - mean) * (x - mean))
             .Average();
     }    
     
-    private static double Mode(IEnumerable<float> array) {
+    public double Mode(IEnumerable<float> array) {
         // precyzja do dwoch miejsc po przecinku
         return array.Select(x => Math.Round(x, 2))
             .GroupBy(x => x)
@@ -70,18 +69,18 @@ public class StatisticsCalc : IStatisticsCalc
             .First();
     }
     
-    private static double AsymmetryFactor(float[] array) {
+    public double AsymmetryFactor(float[] array) {
         var mean = array.Average();
         var std = StandardDeviation(array);
         return array.Select(x => (x - mean) * (x - mean) * (x - mean))
             .Sum() / (std * std * std * array.Length);
     } 
     
-    private static int MaxIndex(float[] array) {
+    public int MaxIndex(float[] array) {
         return array.AsSpan().IndexOf(array.Max());
     }    
     
-    private static int MinIndex(float[] array) {
+    public int MinIndex(float[] array) {
         return array.AsSpan().IndexOf(array.Min());
     }
 

@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Data;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace WeatherDataAnalyser.MVVM.Model;
 
@@ -23,17 +24,15 @@ public class DataManager : IDataManager
         var dataRows = new DataRow[data.HourlyWeatherInfo.Time.Length];
         for (var i = 0; i < data.HourlyWeatherInfo.Time.Length; i++)
         {
-            dataRows[i] = new DataRow { Time = data.HourlyWeatherInfo.Time[i] };
-            if (valuesIncluded[1])
-                dataRows[i].Temperature = data.HourlyWeatherInfo.Temperature[i];
-            if (valuesIncluded[2])
-                dataRows[i].Pressure = data.HourlyWeatherInfo.Pressure[i];
-            if (valuesIncluded[3])
-                dataRows[i].Rain = data.HourlyWeatherInfo.Rain[i];
-            if (valuesIncluded[4])
-                dataRows[i].WindSpeed = data.HourlyWeatherInfo.WindSpeed[i];
-            if (valuesIncluded[5])
-                dataRows[i].Humidity = data.HourlyWeatherInfo.Humidity[i];
+            dataRows[i] = new DataRow
+            {
+                Time = data.HourlyWeatherInfo.Time[i],
+                Temperature = data.HourlyWeatherInfo.Temperature[i],
+                Pressure = data.HourlyWeatherInfo.Pressure[i],
+                Rain = data.HourlyWeatherInfo.Rain[i],
+                WindSpeed = data.HourlyWeatherInfo.WindSpeed[i],
+                Humidity = data.HourlyWeatherInfo.Humidity[i]
+            };
         }
 
         dataRows = sortBy switch
@@ -59,22 +58,48 @@ public class DataManager : IDataManager
             _ => dataRows
         };
 
-        return Newtonsoft.Json.JsonConvert.SerializeObject(dataRows);
+        return ConvertToJsonCustom(dataRows, valuesIncluded);
 
     }
 
-    public bool WriteToFile(string text)
-            {
-                try
-                {
-                    System.IO.File.WriteAllText("../../../data.txt", text);
-                    return true;
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-            }
+    private static string ConvertToJsonCustom(IReadOnlyList<DataRow> dataRows, IReadOnlyList<bool> valuesIncluded)
+    {
+        var jsonString = new StringBuilder("[");
+        for (var i = 0; i < dataRows.Count; i++)
+        {
+            jsonString.Append('{');
+            jsonString.Append("\"Time\":\"" + dataRows[i].Time + "\",");
+            if (valuesIncluded[1])
+                jsonString.Append("\"Temperature\":" + dataRows[i].Temperature + ",");
+            if (valuesIncluded[2])
+                jsonString.Append("\"Pressure\":" + dataRows[i].Pressure + ",");
+            if (valuesIncluded[3])
+                jsonString.Append("\"Rain\":" + dataRows[i].Rain + ",");
+            if (valuesIncluded[4])
+                jsonString.Append("\"WindSpeed\":" + dataRows[i].WindSpeed + ",");
+            if (valuesIncluded[5])
+                jsonString.Append("\"Humidity\":" + dataRows[i].Humidity);
+            jsonString.Append('}');
+            if (i < dataRows.Count - 1)
+                jsonString.Append(',');
         }
+        jsonString.Append(']');
+        return jsonString.ToString();
+    }
+    
+
+    public bool WriteToFile(string text)
+    {
+        try
+        {
+            System.IO.File.WriteAllText("../../../data.txt", text);
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+}
 
         

@@ -200,7 +200,6 @@
                             Text="Date"
                             Style="{StaticResource TextStyle}"/>
                         <CheckBox
-                            IsEnabled="False"
                             IsChecked="True"
                             Command="{Binding SaveToFileVm.DateIncludedChanged}"
                             Height="18"
