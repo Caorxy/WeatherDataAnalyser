@@ -144,6 +144,7 @@
           }
         }
       },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.NET.Test.Sdk/17.3.2": {
         "dependencies": {
           "Microsoft.CodeCoverage": "17.3.2",
@@ -403,6 +404,20 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         }
       },
+      "Microsoft.WinAppDriver.Appium.WebDriver/1.0.1-Preview": {
+        "dependencies": {
+          "Castle.Core": "5.1.1",
+          "Newtonsoft.Json": "13.0.2",
+          "Selenium.Support": "3.8.0",
+          "Selenium.WebDriver": "3.8.0"
+        },
+        "runtime": {
+          "lib/net45/appium-dotnet-driver.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
       "Moq/4.18.4": {
         "dependencies": {
           "Castle.Core": "5.1.1"
@@ -460,6 +475,28 @@
       },
       "NUnit.Analyzers/3.3.0": {},
       "NUnit3TestAdapter/4.2.1": {},
+      "Selenium.Support/3.8.0": {
+        "dependencies": {
+          "Selenium.WebDriver": "3.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.Support.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
+      "Selenium.WebDriver/3.8.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/WebDriver.dll": {
+            "assemblyVersion": "3.8.0.0",
+            "fileVersion": "3.8.0.0"
+          }
+        }
+      },
       "SkiaSharp/2.88.3": {
         "dependencies": {
           "SkiaSharp.NativeAssets.Win32": "2.88.3",
@@ -551,6 +588,8 @@
           "LiveChartsCore.SkiaSharpView": "2.0.0-beta.700",
           "LiveChartsCore.SkiaSharpView.WPF": "2.0.0-beta.700",
           "Microsoft.AspNet.WebApi.Client": "5.2.9",
+          "Microsoft.CSharp": "4.7.0",
+          "Microsoft.WinAppDriver.Appium.WebDriver": "1.0.1-Preview",
           "Moq": "4.18.4",
           "Newtonsoft.Json": "13.0.2"
         },
@@ -650,6 +689,13 @@
       "path": "microsoft.codecoverage/17.3.2",
       "hashPath": "microsoft.codecoverage.17.3.2.nupkg.sha512"
     },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
+    },
     "Microsoft.NET.Test.Sdk/17.3.2": {
       "type": "package",
       "serviceable": true,
@@ -684,6 +730,13 @@
       "sha512": "sha512-LuI1oG+24TUj1ZRQQjM5Ew73BKnZE5NZ/7eAdh1o8ST5dPhUnJvIkiIn2re3MwnkRy6ELRnvEbBxHP8uALKhJw==",
       "path": "microsoft.win32.systemevents/4.5.0",
       "hashPath": "microsoft.win32.systemevents.4.5.0.nupkg.sha512"
+    },
+    "Microsoft.WinAppDriver.Appium.WebDriver/1.0.1-Preview": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oQVCdgFDamYboh2qKGDol/N5j6eO/JCmoCW8NiQePoFfL8PgySnYK0usjaeFUDURBYKBCq1yTYmHaGyfjindeQ==",
+      "path": "microsoft.winappdriver.appium.webdriver/1.0.1-preview",
+      "hashPath": "microsoft.winappdriver.appium.webdriver.1.0.1-preview.nupkg.sha512"
     },
     "Moq/4.18.4": {
       "type": "package",
@@ -740,6 +793,20 @@
       "sha512": "sha512-kgH8VKsrcZZgNGQXRpVCrM7TnNz9li3b/snH+YmnXUNqsaWa1Xw9EQWHpbzq4Li2FbTjTE/E5N5HdLNXzZ8BpQ==",
       "path": "nunit3testadapter/4.2.1",
       "hashPath": "nunit3testadapter.4.2.1.nupkg.sha512"
+    },
+    "Selenium.Support/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dUjtHRqHt/JLcNodk/IvydquP15m534BMT4Zcq2BM9XYI4XCKX9iJR2qFWAHdv0IYUicZq+w5EsMzceyAe3FUw==",
+      "path": "selenium.support/3.8.0",
+      "hashPath": "selenium.support.3.8.0.nupkg.sha512"
+    },
+    "Selenium.WebDriver/3.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7CUnhcDpyUwY0fs/clW/avjJ8HSsDD3ae4JccC7Lz9oundxkWXLsH9jM0FfGkozj1rNnfYVYObXncQAQxXa4Qw==",
+      "path": "selenium.webdriver/3.8.0",
+      "hashPath": "selenium.webdriver.3.8.0.nupkg.sha512"
     },
     "SkiaSharp/2.88.3": {
       "type": "package",

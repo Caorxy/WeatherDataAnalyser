@@ -43,9 +43,9 @@ public class StatisticsCalc : IStatisticsCalc
         var ordered = data.OrderBy(x => x)
             .ToArray();
         var mid = data.Count / 2;
-        if (data.Count % 2 == 0) {
+        if (data.Count % 2 == 0) 
             return (ordered.ElementAt(mid - 1) + ordered.ElementAt(mid)) / 2;
-        }
+       
         return ordered.ElementAt(mid);
     }
     

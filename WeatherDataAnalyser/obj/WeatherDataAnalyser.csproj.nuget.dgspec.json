@@ -61,6 +61,14 @@
               "target": "Package",
               "version": "[5.2.9, )"
             },
+            "Microsoft.CSharp": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "Microsoft.WinAppDriver.Appium.WebDriver": {
+              "target": "Package",
+              "version": "[1.0.1-Preview, )"
+            },
             "Moq": {
               "target": "Package",
               "version": "[4.18.4, )"

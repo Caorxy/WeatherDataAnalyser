@@ -60,3 +60,6 @@ C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\n
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\obj\Debug\net7.0-windows\MVVM\View\SaveToFileView.baml
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\bin\Debug\net7.0-windows\Castle.Core.dll
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\bin\Debug\net7.0-windows\Moq.dll
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\bin\Debug\net7.0-windows\appium-dotnet-driver.dll
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\bin\Debug\net7.0-windows\WebDriver.Support.dll
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyser\bin\Debug\net7.0-windows\WebDriver.dll

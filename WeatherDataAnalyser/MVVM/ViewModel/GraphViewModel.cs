@@ -29,16 +29,16 @@ public class GraphViewModel : ObservableObject
         var pos = first ? Pos : Pos + 5;
         return pos switch
         {
-            0 => CurrentGraphData?.HourlyWeatherInfo?.Temperature!,
-            1 => CurrentGraphData?.HourlyWeatherInfo?.Pressure!,
-            2 => CurrentGraphData?.HourlyWeatherInfo?.WindSpeed!,
-            3 => CurrentGraphData?.HourlyWeatherInfo?.Humidity!,
-            4 => CurrentGraphData?.HourlyWeatherInfo?.Rain!,
-            5 => CurrentGraphData2?.HourlyWeatherInfo?.Temperature!,
-            6 => CurrentGraphData2?.HourlyWeatherInfo?.Pressure!,
-            7 => CurrentGraphData2?.HourlyWeatherInfo?.WindSpeed!,
-            8 => CurrentGraphData2?.HourlyWeatherInfo?.Humidity!,
-            9 => CurrentGraphData2?.HourlyWeatherInfo?.Rain!,
+            0 => CurrentGraphData?.HourlyWeatherInfo.Temperature!,
+            1 => CurrentGraphData?.HourlyWeatherInfo.Pressure!,
+            2 => CurrentGraphData?.HourlyWeatherInfo.WindSpeed!,
+            3 => CurrentGraphData?.HourlyWeatherInfo.Humidity!,
+            4 => CurrentGraphData?.HourlyWeatherInfo.Rain!,
+            5 => CurrentGraphData2?.HourlyWeatherInfo.Temperature!,
+            6 => CurrentGraphData2?.HourlyWeatherInfo.Pressure!,
+            7 => CurrentGraphData2?.HourlyWeatherInfo.WindSpeed!,
+            8 => CurrentGraphData2?.HourlyWeatherInfo.Humidity!,
+            9 => CurrentGraphData2?.HourlyWeatherInfo.Rain!,
             _ => null
         };
     }
@@ -180,7 +180,7 @@ public class GraphViewModel : ObservableObject
         var values1 = new List<double>();
         var values2 = new List<double>();
         var dateValues = new List<string>();
-        var count = CurrentGraphData?.HourlyWeatherInfo?.Time?.Length;
+        var count = CurrentGraphData?.HourlyWeatherInfo.Time.Length;
         var data = GetCurrentData(true) as float[] ?? (GetCurrentData(true) ?? Array.Empty<float>()).ToArray();
         var data2 = GetCurrentData(false) as float[] ?? (GetCurrentData(false) ?? Array.Empty<float>()).ToArray();
         
@@ -202,7 +202,7 @@ public class GraphViewModel : ObservableObject
                     values1.Add(Math.Round(data[i], 2));
                     if(data2.Length != 0)
                         values2.Add(Math.Round(data2[i],2));
-                    var date = CurrentGraphData?.HourlyWeatherInfo?.Time![i].ToString(CultureInfo.InvariantCulture);
+                    var date = CurrentGraphData?.HourlyWeatherInfo?.Time[i].ToString(CultureInfo.InvariantCulture);
                     date = date?[..^3];
                     dateValues.Add(date!);
                 }
@@ -286,7 +286,7 @@ public class GraphViewModel : ObservableObject
                 dailyAvg2 += data2[i >= data2.Count? 0 : i];
             n--;
             if (n == divider/2){
-                date = CurrentGraphData?.HourlyWeatherInfo?.Time![i].ToString(CultureInfo.InvariantCulture);
+                date = CurrentGraphData?.HourlyWeatherInfo?.Time[i].ToString(CultureInfo.InvariantCulture);
                 date = date![..^9];
             }
 

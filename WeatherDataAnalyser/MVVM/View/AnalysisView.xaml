@@ -130,7 +130,7 @@
                             Width="60"
                             Style="{StaticResource TextStyle}"
                             Text="From:"/>
-                        <DatePicker
+                        <DatePicker Name="StartDate"
                             SelectedDate="{Binding AnalysisVm.StartDate, Mode=OneWayToSource}"
                             IsTodayHighlighted="True"
                         HorizontalAlignment="Right"
@@ -178,14 +178,14 @@
                             Width="60"
                             Style="{StaticResource TextStyle}"
                             Text="To:"/>
-                        <DatePicker
-                            IsTodayHighlighted="True"
-                            HorizontalAlignment="Right"
-                            FontSize="8"
-                            Background="Black"
-                            Height="20"
-                            Width="80"
-                            SelectedDate="{Binding AnalysisVm.EndDate, Mode=OneWayToSource}"
+                        <DatePicker Name="EndDate"
+                                    IsTodayHighlighted="True"
+                                    HorizontalAlignment="Right"
+                                    FontSize="8"
+                                    Background="Black"
+                                    Height="20"
+                                    Width="80"
+                                    SelectedDate="{Binding AnalysisVm.EndDate, Mode=OneWayToSource}"
                         >
                             <DatePicker.Resources>
                                 <Style TargetType="Border">
@@ -231,7 +231,7 @@
                                Text="Correlation Coefficient"
                                Style="{StaticResource TextStyle}"
                     />
-                    <TextBlock 
+                    <TextBlock Name="CorrVal"
                                Margin="180,0,0,0"
                                Text="{Binding AnalysisVm.Correlation}"
                                Style="{StaticResource TextStyle}"
@@ -249,7 +249,7 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.ColumnSpan="2"
+                        <Button Grid.ColumnSpan="2" Name="NextStats"
                                 Visibility="{Binding AnalysisVm.SecondLocationVisibility}"
                                 Height="36" Width="20" VerticalAlignment="Bottom"
                                 Margin="0,0,20,0"
@@ -264,7 +264,7 @@
                                    Margin="0,17,0,0"
                                    HorizontalAlignment="Center"
                                    Style="{StaticResource TextStyle}"/>
-                        <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                        <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Name="BackStats"
                                 Visibility="{Binding AnalysisVm.SecondLocationVisibility}"
                                 Height="36" Width="20" VerticalAlignment="Bottom"
                                 Command="{Binding AnalysisVm.ChangeStats}"
@@ -296,56 +296,56 @@
                             <TextBlock Grid.Row="0"
                                        Style="{StaticResource TextStyle}"
                                        Text="Max"/>
-                            <TextBlock Grid.Row="0"
+                            <TextBlock Grid.Row="0" Name="MaxVal" Visibility="{Binding AnalysisVm.StatsVisibility}"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
                                 Text="{Binding AnalysisVm.Statistics.Max}"/>
-                            <TextBlock Grid.Row="1"
+                            <TextBlock Grid.Row="1" 
                                        Style="{StaticResource TextStyle}"
                                        Text="Min"/>
-                            <TextBlock Grid.Row="1"
+                            <TextBlock Grid.Row="1" Name="MinVal" Visibility="{Binding AnalysisVm.StatsVisibility}"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
                                 Text="{Binding AnalysisVm.Statistics.Min}"/>
                             <TextBlock Grid.Row="2"
                                        Style="{StaticResource TextStyle}"
                                        Text="Avg"/>
-                            <TextBlock Grid.Row="2"
+                            <TextBlock Grid.Row="2" Name="AvgVal" Visibility="{Binding AnalysisVm.StatsVisibility}"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
                                 Text="{Binding AnalysisVm.Statistics.Avg}"/>
                             <TextBlock Grid.Row="3"
                                        Style="{StaticResource TextStyle}"
                                        Text="Median"/>
-                            <TextBlock Grid.Row="3"
+                            <TextBlock Grid.Row="3" Name="MedVal" Visibility="{Binding AnalysisVm.StatsVisibility}"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
                                 Text="{Binding AnalysisVm.Statistics.Median}"/>
                             <TextBlock Grid.Row="4"
                                        Style="{StaticResource TextStyle}"
                                        Text="StdDev"/>
-                            <TextBlock Grid.Row="4"
+                            <TextBlock Grid.Row="4" Name="StdDevVal" Visibility="{Binding AnalysisVm.StatsVisibility}"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
                                 Text="{Binding AnalysisVm.Statistics.StdDev}"/>
                             <TextBlock Grid.Row="5"
                                        Style="{StaticResource TextStyle}"
                                        Text="Var"/>
-                            <TextBlock Grid.Row="5"
+                            <TextBlock Grid.Row="5" Name="VarVal" Visibility="{Binding AnalysisVm.StatsVisibility}"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
                                 Text="{Binding AnalysisVm.Statistics.Variance}"/>
                             <TextBlock Grid.Row="6"
                                        Style="{StaticResource TextStyle}"
                                        Text="Mode"/>
-                            <TextBlock Grid.Row="6"
+                            <TextBlock Grid.Row="6" Name="ModeVal" Visibility="{Binding AnalysisVm.StatsVisibility}"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
                                 Text="{Binding AnalysisVm.Statistics.Dominant}"/>
                             <TextBlock Grid.Row="7"
                                        Style="{StaticResource TextStyle}"
                                        Text="AFac"/>
-                            <TextBlock Grid.Row="7"
+                            <TextBlock Grid.Row="7" Name="AfcVal" Visibility="{Binding AnalysisVm.StatsVisibility}"
                                 Style="{StaticResource TextStyle}"
                                 HorizontalAlignment="Right"
                                 Text="{Binding AnalysisVm.Statistics.AsymmetryFactor}"/>
@@ -364,11 +364,11 @@
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
                             
-                            <TextBlock Grid.Row="0"
+                            <TextBlock Grid.Row="0"  Name="MaxDate" Visibility="{Binding AnalysisVm.StatsVisibility}"
                                        Style="{StaticResource TextStyle}"
                                        HorizontalAlignment="Center"
                                        Text="{Binding AnalysisVm.Statistics.MaxDate}"/>
-                            <TextBlock Grid.Row="1"
+                            <TextBlock Grid.Row="1" Name="MinDate" Visibility="{Binding AnalysisVm.StatsVisibility}"
                                        Style="{StaticResource TextStyle}"
                                        HorizontalAlignment="Center"
                                        Text="{Binding AnalysisVm.Statistics.MinDate}"/>

@@ -26,6 +26,7 @@ public class AnalysisViewModel : AbstractViewModel
 
     private string _addButtonVisibility;
     private string _secondLocationVisibility;
+    private string _statsVisibility;
     private string _lat2;
     private string _lon2;
     private int _pos;
@@ -42,6 +43,15 @@ public class AnalysisViewModel : AbstractViewModel
         set
         {
             _addButtonVisibility = value;
+            OnPropertyChanged();
+        }
+    }    
+    public string StatsVisibility
+    {
+        get => _statsVisibility;
+        set
+        {
+            _statsVisibility = value;
             OnPropertyChanged();
         }
     }
@@ -108,6 +118,7 @@ public class AnalysisViewModel : AbstractViewModel
     {
         _addButtonVisibility = "Visible";
         _secondLocationVisibility = "Collapsed";
+        _statsVisibility = "Collapsed";
         _lat2 = ""; 
         _lon2 = "";
         _pos = 0;
@@ -147,6 +158,7 @@ public class AnalysisViewModel : AbstractViewModel
                 }
                 
                 SetStats(statisticsCalc);
+                StatsVisibility = "Visible";
                 //Data received 
             }
             catch (Exception)
@@ -157,25 +169,31 @@ public class AnalysisViewModel : AbstractViewModel
         
         Next = new RelayCommand(_ =>
         {
+            StatsVisibility = "Collapsed";
             GraphVm.Pos = (GraphVm.Pos + 1) % 5;
             GraphVm.Title = GraphVm.Titles[GraphVm.Pos];
             GraphVm.OnGraphPropertyChanged();
             SetStats(statisticsCalc);
+            StatsVisibility = "Visible";
         });
 
         Back = new RelayCommand(_ =>
         {
+            StatsVisibility = "Collapsed";
             GraphVm.Pos = GraphVm.Pos == 0 ? 4 : GraphVm.Pos - 1;
             GraphVm.Title = GraphVm.Titles[GraphVm.Pos];
             GraphVm.OnGraphPropertyChanged();
             SetStats(statisticsCalc);
+            StatsVisibility = "Visible";
         });
 
         ChangeStats = new RelayCommand(_ =>
         {
+            StatsVisibility = "Collapsed";
             _pos = _pos == 0 ? 1 : 0;
             Statistics = _statisticsArray[_pos];
             Label = _labels[_pos];
+            StatsVisibility = "Visible";
         });
     }
 

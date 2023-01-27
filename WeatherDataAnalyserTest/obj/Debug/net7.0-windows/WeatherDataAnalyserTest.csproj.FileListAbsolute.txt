@@ -125,3 +125,6 @@ C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyserTest\obj\Deb
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyserTest\obj\Debug\net7.0-windows\ref\WeatherDataAnalyserTest.dll
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyserTest\bin\Debug\net7.0-windows\Castle.Core.dll
 C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyserTest\bin\Debug\net7.0-windows\Moq.dll
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyserTest\bin\Debug\net7.0-windows\appium-dotnet-driver.dll
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyserTest\bin\Debug\net7.0-windows\WebDriver.Support.dll
+C:\Users\gabri\RiderProjects\WeatherDataAnalyser\WeatherDataAnalyserTest\bin\Debug\net7.0-windows\WebDriver.dll

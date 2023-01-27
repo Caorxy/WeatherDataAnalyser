@@ -16,7 +16,7 @@ public class StatisticsCalcTests
     }
 
     [Test]
-    public void CorrelationCoefficient_ValidInput_ReturnsExpectedData()
+    public void CorrelationCoefficient_ValidInput_ShouldReturnExpectedData()
     {
         // Arrange
         var data1 = new float[] { 1, 2, 3, 4, 5 };
@@ -30,7 +30,7 @@ public class StatisticsCalcTests
     }
 
     [Test]
-    public void Median_ValidInput_ReturnsExpectedData()
+    public void Median_ValidInput_ShouldReturnExpectedData()
     {
         // Act
         var result = _statisticsCalc.Median(_data);
@@ -40,7 +40,7 @@ public class StatisticsCalcTests
     }
 
     [Test]
-    public void StandardDeviation_ValidInput_ReturnsExpectedData()
+    public void StandardDeviation_ValidInput_ShouldReturnExpectedData()
     {
         // Act
         var result = _statisticsCalc.StandardDeviation(_data);
@@ -50,7 +50,7 @@ public class StatisticsCalcTests
     }
 
     [Test]
-    public void Variance_ValidInput_ReturnsExpectedData()
+    public void Variance_ValidInput_ShouldReturnExpectedData()
     {
         // Act
         var result = _statisticsCalc.Variance(_data);
@@ -60,7 +60,7 @@ public class StatisticsCalcTests
     }
 
     [Test]
-    public void Mode_ValidInput_ReturnsExpectedData()
+    public void Mode_ValidInput_ShouldReturnExpectedData()
     {
         // Arrange
         var data = new float[] { 1, 2, 3, 3, 4, 5 };
@@ -73,7 +73,7 @@ public class StatisticsCalcTests
     }
 
     [Test]
-    public void AsymmetryFactor_ValidInput_ReturnsExpectedData()
+    public void AsymmetryFactor_ValidInput_ShouldReturnExpectedData()
     {
         // Act
         var result = _statisticsCalc.AsymmetryFactor(_data);
@@ -83,7 +83,7 @@ public class StatisticsCalcTests
     }
 
     [Test]
-    public void MaxIndex_ValidInput_ReturnsExpectedData()
+    public void MaxIndex_ValidInput_ShouldReturnExpectedData()
     {
         // Act
         var result = _statisticsCalc.MaxIndex(_data);
@@ -93,7 +93,7 @@ public class StatisticsCalcTests
     }
 
     [Test]
-    public void MinIndex_ValidInput_ReturnsExpectedData()
+    public void MinIndex_ValidInput_ShouldReturnExpectedData()
     {
         // Act
         var result = _statisticsCalc.MinIndex(_data);
@@ -103,7 +103,7 @@ public class StatisticsCalcTests
     }
 
     [Test]
-    public void GetStatistics_ValidInput_ReturnsExpectedData()
+    public void GetStatistics_ValidInput_ShouldReturnExpectedData()
     {
         // Arrange
         var data = new float[] { 1, 2, 3, 3, 4, 5 };
