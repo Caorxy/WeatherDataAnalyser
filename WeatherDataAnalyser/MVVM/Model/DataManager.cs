@@ -94,7 +94,7 @@ public class DataManager : IDataManager
         try
         {
             System.IO.File.WriteAllText("../../../data.txt", text);
-            return true;
+            return true; 
         }
         catch (Exception)
         {

@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Appium;
@@ -14,7 +18,8 @@ public class WeatherDataAnalyserUserTests
     public void TestInit()
     {
         var options = new AppiumOptions();
-        options.AddAdditionalCapability("app", "C:/Users/gabri/RiderProjects/WeatherDataAnalyser/WeatherDataAnalyser/bin/Debug/net7.0-windows/WeatherDataAnalyser.exe");
+                                            // Write path to exe file below!
+        options.AddAdditionalCapability("app", "Path/to/exe/file/WeatherDataAnalyser.exe");
         options.AddAdditionalCapability("deviceName", "WindowsPC");
         _driver = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), options);
         _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);

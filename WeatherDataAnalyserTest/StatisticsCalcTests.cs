@@ -1,4 +1,6 @@
-﻿namespace WeatherDataAnalyserTest;
+﻿using System;
+
+namespace WeatherDataAnalyserTest;
 using WeatherDataAnalyser.MVVM.Model;
 
 [TestFixture]
